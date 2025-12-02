@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Anta&family=Comfortaa:wght@300..700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Koh+Santepheap:wght@100;300;400;700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Moul&family=Noto+Serif+Khmer:wght@100..900&family=Pacifico&family=Playwrite+HU:wght@100..400&family=Playwrite+VN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Preahvihear&display=swap"
         rel="stylesheet">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -24,113 +24,227 @@
                         alt="logo" class="rounded-full">
                 </a>
             </div>
-            <nav>
+            <nav class="hidden lg:flex lg:gap-x-12">
                 <ul class="flex">
                     <li class="px-4 py-2 hover:text-white hover:bg-blue-600 rounded-md">
-                        <a href="">Home</a>
+                        <a href="./index.html">ទំព័រដើម</a>
+                    </li>
+
+                    <li class="px-4 py-2  hover:text-white hover:bg-blue-600 rounded-md">
+                        <a href="#about-us">អំពីយើង</a>
+                    </li>
+
+                    <li class="px-4 py-2  hover:text-white hover:bg-blue-600 rounded-md">
+                        <a href="#service">សេវាកម្ម</a>
                     </li>
                     <li class="px-4  py-2  hover:text-white hover:bg-blue-600 rounded-md">
-                        <a href="">Contact</a>
-                    </li>
-                    <li class="px-4 py-2  hover:text-white hover:bg-blue-600 rounded-md">
-                        <a href="">About</a>
+                        <a href="#contact-us">ទំនាក់ទំនង</a>
                     </li>
                 </ul>
 
             </nav>
+            <div class="flex lg:hidden">
+                <button type="button" command="show-modal" commandfor="mobile-menu"
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                        aria-hidden="true" class="size-6">
+                        <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+
+
         </section>
+        <!-- moblie menu  -->
+        <el-dialog>
+            <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                    <el-dialog-panel
+                        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="-m-1.5 p-1.5">
+                                <span class="sr-only">Your Company</span>
+                                <img src="https://t3.ftcdn.net/jpg/06/28/41/90/360_F_628419033_DhXsL6BKRjAfsmunFSGKXXjnnccJddno.jpg"
+                                    alt="" class="h-8 w-auto" />
+                            </a>
+                            <button type="button" command="close" commandfor="mobile-menu"
+                                class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                <span class="sr-only">Close menu</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    data-slot="icon" aria-hidden="true" class="size-6">
+                                    <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-gray-500/10">
+                                <div class="space-y-2 py-6">
+                                    <a href="./index.html"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">ទំព័រដើម</a>
+                                    <a href="#about-us"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">អំពីយើង</a>
+                                    <a href="#service"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">សេវាកម្ម</a>
+                                    <a href="#contact-us"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">ទំនាក់ទំនង</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </el-dialog-panel>
+                </div>
+            </dialog>
+        </el-dialog>
     </header>
 
     <!-- hero section  -->
     <div class="hero-section ">
-        <div class="hero-banner w-full py-60 px-10">
-            <h2 class="font-bold text-3xl text-white ">សេវាកម្មដែលអ្នកទុកចិត្ត</h2>
-            <p class="text-white py-4 w-4/5 ">យើងផ្តល់សេវាបែបឌីជីថល ដែលអាចបង្កើនលទ្ធភាព
+        <div class="hero-banner w-full lg:py-60 px-10 py-30">
+            <h2 class="animate-bounce font-bold text-3xl text-white  ">សេវាកម្មដែលអ្នកទុកចិត្ត</h2>
+            <p class="text-white py-4 w-4/5 " data-aos="fade-up">យើងផ្តល់សេវាបែបឌីជីថល ដែលអាចបង្កើនលទ្ធភាព
                 និងចំណូល។ សូមរីករាយនឹងដំណោះស្រាយត្រឹមត្រូវ
                 សម្រាប់អាជីវកម្មរបស់អ្នក។ <br>យើងមានបំណងក្លាយជាដៃគូដែលអាចទុកចិត្តបាន ដោយការផ្តោតលើគុណភាព សេវាកម្មលឿន
                 និងការអភិវឌ្ឍឥតឈប់ឈរ។ </p>
-            <button
+            <button data-aos="fade-up"
                 class="text-white bg-blue-500 px-3 py-2 rounded-md hover:cursor-pointer hover:bg-blue-700">អានបន្ថែម</button>
         </div>
     </div>
+    <main>
 
-    <!-- about us -->
-    <section>
-        <div class="grid grid-cols-2 py-16 px-8 gap-4">
-            <!-- left  -->
-            <div class="img">
-                <img src="https://img.freepik.com/premium-vector/about-us_773186-1363.jpg?semt=ais_hybrid&w=740&q=80"
-                    alt="" class="w-full shadow-lg rounded-lg">
+
+        <!-- about us contact serivce -->
+        <section>
+            <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 py-16 px-8 gap-4 " id="about-us">
+                <!-- left  -->
+                <div class="img order-2 md:order-none" data-aos="zoom-in">
+                    <img src="https://img.freepik.com/premium-vector/about-us_773186-1363.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="" class="w-full shadow-lg rounded-lg">
+                </div>
+                <!-- right -->
+                <div class="p-5 order-1 md:order-none" data-aos="zoom-in">
+                    <h2 class="text-3xl font-bold">យើងជានរណា?</h2>
+                    <p class="pb-5 pt-4">
+                        ក្រុមហ៊ុន/គេហទំព័ររបស់យើងត្រូវបានបង្កើតឡើងដើម្បីផ្តល់ជូននូវសេវាកម្មដែលមានគុណភាព ខ្ពស់
+                        និងការដោះស្រាយជំនួយបានយ៉ាងរហ័ស។ យើង ព្យាយាមបង្កើតបទពិសោធន៍ដ៏ងាយស្រួល សុវត្ថិភាព
+                        និងមានតម្លៃសម្រាប់អតិថិជនគ្រប់រូប។
+
+                    </p>
+                    <p>យើងជឿជាក់ថា ការអភិវឌ្ឍលើគុណភាព និងការច្នៃប្រឌិតជារឿងសំខាន់ ដើម្បីអាចបំពេញតាមតម្រូវ
+                        ការរបស់អ្នកក្នុងសម័យឌីជីថលសព្វថ្ងៃ។
+                        សូមអរគុណដែលជ្រើសរើស និងទុកចិត្តលើយើង។
+                    </p>
+                </div>
             </div>
-            <!-- right -->
-            <div class="p-5">
-                <h2 class="text-3xl font-bold">យើងជានរណា?</h2>
-                <p class="pb-5 pt-4">
-                    ក្រុមហ៊ុន/គេហទំព័ររបស់យើងត្រូវបានបង្កើតឡើងដើម្បីផ្តល់ជូននូវសេវាកម្មដែលមានគុណភាព ខ្ពស់
-                    និងការដោះស្រាយជំនួយបានយ៉ាងរហ័ស។ យើង ព្យាយាមបង្កើតបទពិសោធន៍ដ៏ងាយស្រួល សុវត្ថិភាព
-                    និងមានតម្លៃសម្រាប់អតិថិជនគ្រប់រូប។
+            <!-- service  -->
+            <div class="service pt-20" id="service"> </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 pb-16 px-8 gap-4">
+                <!-- left  -->
+                <div class="p-5" data-aos="flip-down">
+                    <h2 class="text-3xl font-bold">សេវាកម្ម</h2>
+                    <p class="pb-5 pt-4">
+                        ក្រុមហ៊ុន/គេហទំព័ររបស់យើងត្រូវបានបង្កើតឡើងដើម្បីផ្តល់ជូននូវសេវាកម្មដែលមានគុណភាព ខ្ពស់
+                        និងការដោះស្រាយជំនួយបានយ៉ាងរហ័ស។ យើង ព្យាយាមបង្កើតបទពិសោធន៍ដ៏ងាយស្រួល សុវត្ថិភាព
+                        និងមានតម្លៃសម្រាប់អតិថិជនគ្រប់រូប។
 
-                </p>
-                <p>យើងជឿជាក់ថា ការអភិវឌ្ឍលើគុណភាព និងការច្នៃប្រឌិតជារឿងសំខាន់ ដើម្បីអាចបំពេញតាមតម្រូវ
-                    ការរបស់អ្នកក្នុងសម័យឌីជីថលសព្វថ្ងៃ។
-                    សូមអរគុណដែលជ្រើសរើស និងទុកចិត្តលើយើង។
-                </p>
+                    </p>
+                    <p>យើងជឿជាក់ថា ការអភិវឌ្ឍលើគុណភាព និងការច្នៃប្រឌិតជារឿងសំខាន់ ដើម្បីអាចបំពេញតាមតម្រូវ
+                        ការរបស់អ្នកក្នុងសម័យឌីជីថលសព្វថ្ងៃ។
+                        សូមអរគុណដែលជ្រើសរើស និងទុកចិត្តលើយើង។
+                    </p>
+                </div>
+                <!-- right -->
+
+                <div class="img" data-aos="flip-down">
+                    <img src="https://imgs.search.brave.com/YH1xLUijLJz418Q2xrSVTZDinlaDv99BwhVsk8Wg9So/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM1/OTg3NjA2OC92ZWN0/b3IvY3VzdG9tZXIt/c2VydmljZS1ob3Rs/aW5lLW9wZXJhdG9y/cy1jb25zdWx0LWN1/c3RvbWVycy13aXRo/LWhlYWRzZXRzLW9u/LWNvbXB1dGVycy0y/NDctZ2xvYmFsLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1I/Y3JGc1Bha3Nsdm94/NnJXbk9XbGxILWpK/MzJUVU5yVEt1c1ox/SjBfNW9jPQ"
+                        alt="" class="w-full shadow-lg rounded-lg">
+                </div>
             </div>
-        </div>
 
-        <div class="grid grid-cols-2 pb-16 px-8 gap-4">
-            <!-- left  -->
-            <div class="p-5">
-                <h2 class="text-3xl font-bold">យើងជានរណា?</h2>
-                <p class="pb-5 pt-4">
-                    ក្រុមហ៊ុន/គេហទំព័ររបស់យើងត្រូវបានបង្កើតឡើងដើម្បីផ្តល់ជូននូវសេវាកម្មដែលមានគុណភាព ខ្ពស់
-                    និងការដោះស្រាយជំនួយបានយ៉ាងរហ័ស។ យើង ព្យាយាមបង្កើតបទពិសោធន៍ដ៏ងាយស្រួល សុវត្ថិភាព
-                    និងមានតម្លៃសម្រាប់អតិថិជនគ្រប់រូប។
+            <!-- contact  -->
+            <div class="service pt-20" id="contact-us"> </div>
 
-                </p>
-                <p>យើងជឿជាក់ថា ការអភិវឌ្ឍលើគុណភាព និងការច្នៃប្រឌិតជារឿងសំខាន់ ដើម្បីអាចបំពេញតាមតម្រូវ
-                    ការរបស់អ្នកក្នុងសម័យឌីជីថលសព្វថ្ងៃ។
-                    សូមអរគុណដែលជ្រើសរើស និងទុកចិត្តលើយើង។
-                </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 pb-16 px-8 gap-4" data-aos="slide-up">
+                <!-- left  -->
+                <div class="img">
+                    <img src="https://storage.googleapis.com/cdn-website-bolddesk/2024/10/d287592c-contact-us-page.webp"
+                        alt="" class="w-full shadow-lg rounded-lg">
+                </div>
+                <!-- right -->
+                <div class="px-10 p-4 lg:pt-0 md:pt-0 rounded-lg lg:bg-transparent md:bg-transparent shadow-lg "
+                    data-aos="slide-up">
+                    <h2 class="text-3xl font-bold pb-3">ទាក់ទងមកកាន់ពួកយើង</h2>
+                    <label for="">ឈ្មោះពេញ ៖ </label>
+                    <input type="text" placeholder="សូមបញ្ជូលឈ្មោះពេញរបស់អ្នក"
+                        class="w-full border-1 border-gray-300 rounded-md py-1 px-2 mt-2 mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                    <br>
+                    <label for="">អ៊ីម៉ែល ៖</label>
+                    <input
+                        class="w-full border-1 border-gray-300 rounded-md py-1 px-2 mt-2 mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        type="email" placeholder="សូមបញ្ជូលអ៊ីម៉ែលអ្នក">
+                    <br>
+                    <label for="">សារ៖ </label>
+                    <br>
+                    <textarea
+                        class="w-full h-20  border-1 border-gray-300 rounded-md py-1 px-2 mt-2 mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                        name="" id="" cols="30" rows="5" placeholder="សូមបញ្ជូលសាររបស់អ្នកនៅទីនេះ..."></textarea> <br>
+                    <button
+                        class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">បញ្ចូន</button>
+
+                </div>
             </div>
-            <!-- right -->
+        </section>
 
-            <div class="img">
-                <img src="https://img.freepik.com/premium-vector/about-us_773186-1363.jpg?semt=ais_hybrid&w=740&q=80"
-                    alt="" class="w-full shadow-lg rounded-lg">
+        <!-- more service  -->
+        <section class="pb-16 px-8">
+            <div class="container-fluid">
+                <h2 class="text-3xl font-bold py-4 " data-aos="zoom-in-up">សេវាកម្មដែលយើងមាន</h2>
+                <div class="grid grid-cols-1 gap-1  md:grid-cols-3 md:gap-4">
+                    <div class="relative" data-aos="zoom-in-up">
+                        <img src="https://koremedia.com/wp-content/uploads/2022/06/1website-design-development-languages-on-laptop2.png"
+                            alt="web-design" class=" w-full  rounded-xl shadow-lg shadow-gray-400 lg:h-4/5 h-5/6">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center text-center px-1 text-white">
+                            <h2 class="text-xl font-bold   hover:bg-black/90 hover:cursor-pointer">Web Design</h2>
+                            <p class=" hover:bg-black/90 hover:cursor-pointer">គេហៈទំព័រទំនើបងាយស្រួលប្រើ</p>
+                        </div>
+                    </div>
+                    <div class="relative" data-aos="zoom-in-up">
+                        <img src="https://koremedia.com/wp-content/uploads/2022/06/1website-design-development-languages-on-laptop2.png"
+                            alt="web-design" class=" w-full  rounded-xl shadow-lg shadow-gray-400 lg:h-4/5 h-5/6">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center text-center px-1 text-white">
+                            <h2 class="text-xl font-bold   hover:bg-black/90 hover:cursor-pointer">Web Design</h2>
+                            <p class=" hover:bg-black/90 hover:cursor-pointer">គេហៈទំព័រទំនើបងាយស្រួលប្រើ</p>
+                        </div>
+                    </div>
+                    <div class="relative" data-aos="zoom-in-up">
+                        <img src="https://koremedia.com/wp-content/uploads/2022/06/1website-design-development-languages-on-laptop2.png"
+                            alt="web-design" class=" w-full  rounded-xl shadow-lg shadow-gray-400 lg:h-4/5 h-5/6">
+                        <div
+                            class="absolute inset-0 flex flex-col justify-center items-center text-center px-1 text-white">
+                            <h2 class="text-xl font-bold   hover:bg-black/90 hover:cursor-pointer">Web Design</h2>
+                            <p class=" hover:bg-black/90 hover:cursor-pointer">គេហៈទំព័រទំនើបងាយស្រួលប្រើ</p>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
-        </div>
 
-        <div class="grid grid-cols-2 pb-16 px-8 gap-4">
-            <!-- left  -->
-            <div class="img">
-                <img src="https://storage.googleapis.com/cdn-website-bolddesk/2024/10/d287592c-contact-us-page.webp"
-                    alt="" class="w-full shadow-lg rounded-lg">
-            </div>
-            <!-- right -->
-            <div class="px-10 ">
-                <h2 class="text-3xl font-bold pb-3">ទាក់ទងមកកាន់ពួកយើង</h2>
-                <label for="">ឈ្មោះពេញ ៖ </label>
-                <input type="text" placeholder="សូមបញ្ជូលឈ្មោះពេញរបស់អ្នក"
-                    class="w-full border-1 border-gray-300 rounded-md py-1 px-2 mt-2 mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
-                <br>
-                <label for="">អ៊ីម៉ែល ៖</label>
-                <input
-                    class="w-full border-1 border-gray-300 rounded-md py-1 px-2 mt-2 mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    type="email" placeholder="សូមបញ្ជូលអ៊ីម៉ែលអ្នក">
-                <br>
-                <label for="">សារ៖ </label>
-                <br>
-                <textarea
-                    class="w-full h-20  border-1 border-gray-300 rounded-md py-1 px-2 mt-2 mb-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                    name="" id="" cols="30" rows="5" placeholder="សូមបញ្ជូលសាររបស់អ្នកនៅទីនេះ..."></textarea> <br>
-                <button
-                    class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">បញ្ចូន</button>
 
-            </div>
-        </div>
-    </section>
+        </section>
 
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+        })
+    </script>
 </body>
 
 </html>

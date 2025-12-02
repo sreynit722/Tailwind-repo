@@ -1,12 +1,17 @@
 * {
   font-family: "Kantumruy Pro", sans-serif;
 }
+html{
+  scroll-behavior: smooth;
+}
 .hero-section {
   background-image: url("https://img.freepik.com/free-vector/gradient-connection-background_23-2150441887.jpg?semt=ais_hybrid&w=740&q=80");
   background-size: cover;
   animation: resize-bg 25s linear infinite;
 }
-
+.blur-bg{
+  filter: blur(0.7px);
+}
 /* animation  */
 @keyframes resize-bg {
   0% {
